@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PXS - Software Development</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PXS - Software Development</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <div id="navbar">
-        <!-- Navigation bar -->
-    </div>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      </section>
 
-    <div class="parallax" id="home">
-        <h2>Home</h2>
-        <!-- Home section content -->
-    </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="text-editor">
+        <h2>Online Text Editor</h2>
+        <textarea id="code-editor"></textarea>
+        <button onclick="saveText()">Save (.txt)</button>
+      </div>
+    </section>
 
-    <div class="parallax" id="projects">
-        <h2>Projects</h2>
-        <!-- Projects section content -->
-    </div>
+    <section id="youtube">
+      <h2>PXS YouTube Channel</h2>
+      </section>
 
-    <div class="parallax" id="text-editor">
-        <h2>Text Editor</h2>
-        <textarea id="editor" placeholder="Write your .txt here..."></textarea>
-    </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      </section>
+  </main>
 
-    <div class="parallax" id="youtube">
-        <h2>YouTube Channel</h2>
-        <!-- YouTube section content -->
-    </div>
-
-    <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

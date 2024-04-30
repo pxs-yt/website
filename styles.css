@@ -1,37 +1,71 @@
-/* Add the gradient background to the whole page */
 body {
     background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-    backdrop-filter: blur(5px);
-}
-
-/* Style for the navigation bar with glass-like effect */
-#navbar {
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    /* Add more styles for navigation links */
-}
-
-/* Parallax effect for sections */
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* Add specific background images for each section */
-}
-
-/* Style for the text editor */
-#editor {
-    width: 80%;
-    height: 300px;
-    margin: 20px;
-    /* Add more styles */
-}
-
-/* Add responsive design features */
-@media (max-width: 768px) {
-    /* Adjust styles for mobile devices */
-}
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 2rem;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+  
+  main {
+    padding-top: 8rem; /* Adjust for header height */
+  }
+  
+  section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .text-editor {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+  }
+  
+  #code-editor {
+    width: 100%;
+    height: 200px;
+    font-family: monospace;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #f68084;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
