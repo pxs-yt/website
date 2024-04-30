@@ -1,0 +1,37 @@
+/* Add the gradient background to the whole page */
+body {
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    backdrop-filter: blur(5px);
+}
+
+/* Style for the navigation bar with glass-like effect */
+#navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Add more styles for navigation links */
+}
+
+/* Parallax effect for sections */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Add specific background images for each section */
+}
+
+/* Style for the text editor */
+#editor {
+    width: 80%;
+    height: 300px;
+    margin: 20px;
+    /* Add more styles */
+}
+
+/* Add responsive design features */
+@media (max-width: 768px) {
+    /* Adjust styles for mobile devices */
+}
