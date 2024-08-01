@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Top Navbar with Fade Effect</title>
+    <title>Pill-shaped Navbar with Fade Effect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,11 +30,7 @@
         .navbar {
             position: sticky;
             top: 0;
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 20px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             z-index: 1000;
@@ -42,9 +38,12 @@
         }
         .navbar-content {
             display: inline-flex;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 25px;
             padding: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .navbar a {
             color: white;
