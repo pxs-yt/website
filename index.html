@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pill-shaped Navigation Bar</title>
+    <title>Top Frost-effect Navigation Bar</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            padding: 0;
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
         }
         .navbar {
-            background-color: #333;
-            border-radius: 25px;
-            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar-content {
             display: inline-flex;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 5px;
         }
         .navbar a {
             color: white;
@@ -28,19 +41,30 @@
             transition: background-color 0.3s;
         }
         .navbar a:hover {
-            background-color: #555;
+            background-color: rgba(255, 255, 255, 0.2);
         }
         .navbar a.active {
-            background-color: #4CAF50;
+            background-color: rgba(76, 175, 80, 0.6);
+        }
+        .content {
+            padding-top: 80px;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <div class="navbar-content">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
     </nav>
+    <div class="content">
+        <h1>Welcome to Our Website</h1>
+        <p>This is a sample content area to demonstrate the top navigation bar with a frost effect.</p>
+    </div>
 </body>
 </html>
