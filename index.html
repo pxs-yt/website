@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Top Frost-effect Navigation Bar</title>
+    <title>Sticky Top Navbar with Fade Effect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +27,6 @@
             }
         }
 
-        
         .navbar {
             position: sticky;
             top: 0;
@@ -39,6 +38,7 @@
             display: flex;
             justify-content: center;
             z-index: 1000;
+            transition: opacity 0.3s ease;
         }
         .navbar-content {
             display: inline-flex;
@@ -74,7 +74,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="navbar-content">
             <a href="#" class="active">Home</a>
             <a href="#">About</a>
@@ -96,5 +96,31 @@
             <h2>Contact Us</h2>
         </div>
     </div>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+        let isVisible = true;
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                if (isVisible && scrollTop > 50) {
+                    navbar.style.opacity = '0';
+                    isVisible = false;
+                }
+            } else {
+                // Scrolling up
+                if (!isVisible) {
+                    navbar.style.opacity = '1';
+                    isVisible = true;
+                }
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+    </script>
 </body>
 </html>
