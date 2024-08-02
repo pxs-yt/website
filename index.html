@@ -75,6 +75,33 @@
             font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
+        .scroll-up-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: opacity 0.3s ease, background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .scroll-up-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .scroll-up-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
     </style>
 </head>
 <body>
@@ -100,9 +127,15 @@
             <h2>Contact Us</h2>
         </div>
     </div>
+    <div class="scroll-up-btn" id="scrollUpBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+        </svg>
+    </div>
 
     <script>
         const navbar = document.getElementById('navbar');
+        const scrollUpBtn = document.getElementById('scrollUpBtn');
         let lastScrollTop = 0;
         let isVisible = true;
 
@@ -123,10 +156,19 @@
                 }
             }
             
+            // Show/hide scroll-up button
+            if (scrollTop > 300) {
+                scrollUpBtn.style.opacity = '1';
+                scrollUpBtn.style.pointerEvents = 'auto';
+            } else {
+                scrollUpBtn.style.opacity = '0';
+                scrollUpBtn.style.pointerEvents = 'none';
+            }
+            
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }, false);
 
-        // Smooth scrolling
+        // Smooth scrolling for navbar links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -138,6 +180,14 @@
                 // Update active class
                 document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
                 this.classList.add('active');
+            });
+        });
+
+        // Scroll up button functionality
+        scrollUpBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
