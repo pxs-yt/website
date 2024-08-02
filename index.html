@@ -102,6 +102,24 @@
             height: 24px;
             fill: white;
         }
+
+        /* Custom Audio Player Styles */
+        .audio-player {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+        .audio-player audio {
+            width: 300px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -125,6 +143,12 @@
         </div>
         <div class="section" id="contact">
             <h2>Contact Us</h2>
+        </div>
+        <div class="audio-player">
+            <audio controls>
+                <source src="your-audio-file.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
         </div>
     </div>
     <div class="scroll-up-btn" id="scrollUpBtn">
