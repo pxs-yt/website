@@ -80,14 +80,14 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="navbar-content">
-            <a href="#" class="active">Home</a>
+            <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
     <div class="content">
-        <div class="section">
+        <div class="section" id="home">
             <h1>Welcome to Our Website</h1>
         </div>
         <div class="section" id="about">
@@ -125,6 +125,21 @@
             
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }, false);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Update active class
+                document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>
